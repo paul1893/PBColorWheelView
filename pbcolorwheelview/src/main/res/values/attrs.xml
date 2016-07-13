@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ColorWheelView">
+        <attr name="stroke" format="dimension"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="colors" format="reference"/>
+        <attr name="textsColor" format="reference"/>
+        <attr name="src" format="reference"/>
+        <attr name="texts" format="reference"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">PBColorWheelView</string>
+
+    <string-array name="array_colors">
+        <item>#4E6BA5</item>
+        <item>#00BCD4</item>
+        <item>#FF4081</item>
+        <item>#F44336</item>
+        <item>#4CAF50</item>
+    </string-array>
+
+    <string-array name="array_texts">
+        <item>Section 1</item>
+        <item>Section 2</item>
+        <item>Section 3</item>
+        <item>Section 4</item>
+        <item>Section 5</item>
+    </string-array>
+
+    <string-array name="array_texts_colors">
+        <item>#333333</item>
+        <item>#333333</item>
+        <item>#333333</item>
+        <item>#333333</item>
+        <item>#333333</item>
+    </string-array>
+
+</resources>
