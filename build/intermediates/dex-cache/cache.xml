@@ -1,2 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="f9b9370aadf8eb1c8b65d6ee3510e3fc6aaf3bb0">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_4d9df0a9fd4b1e379fa9249019d8c51509d1c26f/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="a1a818911fc99c29cc4dd026a40122c7e6a20e6c">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_c68a2c67e53cd979a0a3b6e8810c8f568ad9c917/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.4.0_87cb598a70b06dc98cf1b8a9cb486af45cbd223e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.4.0_ce662669d323e8f5725dff80651ece61fb065156/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.4.0_63cf8c9d647ef1c35c3e702bd331609d6d90b309/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.4.0_85c223f1440f99a508857c2bd7a95819a825f010/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.4.0_06bf5088f2063b6070d429a8cd24821fdf557cb3/classes.dex" />
+    </item>
+    <item
+        jar="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/Paul/Documents/Soft_in_development/AndroidStudioProjects/PBColorWheelView/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.4.0_9c805c6fe7305684a3e8e161e82ad8fdd68b02c2/classes.dex" />
+    </item>
+
+</items>

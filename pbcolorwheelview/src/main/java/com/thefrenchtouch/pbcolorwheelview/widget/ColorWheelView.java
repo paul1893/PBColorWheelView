@@ -10,6 +10,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
@@ -25,7 +27,7 @@ public class ColorWheelView extends View {
     private int w; //La largeur de la "Wheel"
     private int h; //La hauteur de la "Wheel"
     private float strokeWidth = 3.0f; //Epaisseur des sections
-    private float textSize = 80 ; //Taille du texte des sections
+    private float textSize = 80; //Taille du texte des sections
     private int sectionNumber = 1; //Le nombre de section
     private String[] colors; //Tableau de couleurs pour les sections
     private String[] texts; //Tableau de textes pour les sections
@@ -85,7 +87,8 @@ public class ColorWheelView extends View {
             setImage(a.getResourceId(R.styleable.ColorWheelView_src, R.mipmap.ic_launcher));
             texts = getResources().getStringArray((a.getResourceId(R.styleable.ColorWheelView_texts, R.array.array_texts)));
 
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
 
         //On prépare le pinceau
         mPiePaint = new Paint();
@@ -127,20 +130,20 @@ public class ColorWheelView extends View {
             mPiePaint.setColor(Color.parseColor(colors[i]));
             canvas.drawArc(mBounds, lastAngle, angle, false, mPiePaint);
 
-           //On écrit le nom de la section
+            //On écrit le nom de la section
             mPiePaint.setColor(Color.parseColor(textsColor[i]));
             mPiePaint.setStyle(Paint.Style.FILL);
             mPiePaint.setTextSize(textSize);
 
             //Angle représentant le milieu de la section en radian
-            double middleAngleRadian = ((lastAngle + (angle/2))*Math.PI)/180;
+            double middleAngleRadian = ((lastAngle + (angle / 2)) * Math.PI) / 180;
             //Rayon de la roue
-            float rayon = w/2;
+            float rayon = w / 2;
             //Projection sur les axes X et Y
             float x = (float) (Math.cos(middleAngleRadian) * rayon);
             float y = (float) (Math.sin(middleAngleRadian) * rayon);
 
-            Log.i("Point ", "Angle: "+(lastAngle+(angle/2))+" , Cosinus: "+Math.cos(((lastAngle+(angle/2))*Math.PI)/180)+" , Sinus: "+Math.sin(((lastAngle+(angle/2))*Math.PI)/180));
+            Log.i("Point ", "Angle: " + (lastAngle + (angle / 2)) + " , Cosinus: " + Math.cos(((lastAngle + (angle / 2)) * Math.PI) / 180) + " , Sinus: " + Math.sin(((lastAngle + (angle / 2)) * Math.PI) / 180));
 
             //On écrit le texte
             try {
@@ -148,15 +151,15 @@ public class ColorWheelView extends View {
                 //Coeffcient rapprochement du centre
                 float coefFromCenter = 1.2f;
 
-                x = rayon+(x/coefFromCenter)-(texts[i].length()*8); //On décale de la moitié de la largeur du texte (pour centrer)
-                y = rayon+(y/coefFromCenter);
+                x = rayon + (x / coefFromCenter) - (texts[i].length() * 8); //On décale de la moitié de la largeur du texte (pour centrer)
+                y = rayon + (y / coefFromCenter);
 
                 //On dessine
                 canvas.drawText(texts[i], Math.abs(x), Math.abs(y), mPiePaint);
 
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
 
-            }catch (ArrayIndexOutOfBoundsException e2){
+            } catch (ArrayIndexOutOfBoundsException e2) {
                 Log.e("ColorWheelView", "Vous avez définis moins de texte que de sections");
             }
 
@@ -178,7 +181,7 @@ public class ColorWheelView extends View {
     }
 
     public void setImage(int resId) {
-        this.bitmap = BitmapFactory.decodeResource(getResources(),resId);
+        this.bitmap = BitmapFactory.decodeResource(getResources(), resId);
     }
 
     public void setColor(String[] color) {
@@ -201,4 +204,94 @@ public class ColorWheelView extends View {
         this.sectionNumber = number;
     }
 
+    @Override
+    public Parcelable onSaveInstanceState() {
+        //begin boilerplate code that allows parent classes to save state
+        Parcelable superState = super.onSaveInstanceState();
+
+        SavedState ss = new SavedState(superState);
+        //end
+
+        ss.strokeWidth = this.strokeWidth;
+        ss.textSize = this.textSize;
+        ss.sectionNumber = this.sectionNumber;
+        ss.colors = this.colors;
+        ss.texts = this.texts;
+        ss.textsColor = this.textsColor;
+        ss.bitmap = this.bitmap;
+
+        return ss;
+    }
+
+    @Override
+    public void onRestoreInstanceState(Parcelable state) {
+        //begin boilerplate code so parent classes can restore state
+        if (!(state instanceof SavedState)) {
+            super.onRestoreInstanceState(state);
+            return;
+        }
+
+        SavedState ss = (SavedState) state;
+        super.onRestoreInstanceState(ss.getSuperState());
+        //end
+
+        this.strokeWidth = ss.strokeWidth;
+        this.textSize = ss.textSize;
+        this.sectionNumber = ss.sectionNumber;
+        this.colors = ss.colors;
+        this.texts = ss.texts;
+        this.textsColor = ss.textsColor;
+        this.bitmap = ss.bitmap;
+    }
+
+    static class SavedState extends BaseSavedState {
+        float strokeWidth;
+        float textSize;
+        int sectionNumber;
+        String[] colors;
+        String[] texts;
+        String[] textsColor;
+        Bitmap bitmap;
+
+        SavedState(Parcelable superState) {
+            super(superState);
+        }
+
+        private SavedState(Parcel in) {
+            super(in);
+            this.strokeWidth = in.readFloat();
+            this.textSize = in.readFloat();
+            this.sectionNumber = in.readInt();
+            this.colors = in.createStringArray();
+            this.texts = in.createStringArray();
+            this.textsColor = in.createStringArray();
+            this.bitmap = in.readParcelable(Bitmap.class.getClassLoader());
+        }
+
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            super.writeToParcel(out, flags);
+            out.writeFloat(this.strokeWidth);
+            out.writeFloat(this.textSize);
+            out.writeInt(this.sectionNumber);
+            out.writeStringArray(this.colors);
+            out.writeStringArray(this.texts);
+            out.writeStringArray(this.textsColor);
+            this.bitmap.writeToParcel(out, 0);
+
+        }
+
+        //required field that makes Parcelables from a Parcel
+        public static final Parcelable.Creator<SavedState> CREATOR =
+                new Parcelable.Creator<SavedState>() {
+                    public SavedState createFromParcel(Parcel in) {
+                        return new SavedState(in);
+                    }
+
+                    public SavedState[] newArray(int size) {
+                        return new SavedState[size];
+                    }
+                };
+    }
 }
+

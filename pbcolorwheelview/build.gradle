@@ -34,7 +34,7 @@ ext {
     artifact = 'pbcolorwheelview'
 
     libraryDescription = 'A simple university project. A custom color wheel view with texts'
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'bancarelpaul'
     developerName = 'Paul Bancarel'
